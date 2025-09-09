@@ -1,4 +1,4 @@
-# Particula Frontend Project Structure
+# Frontend Project Structure
 
 ## Module-Based Architecture
 
