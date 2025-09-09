@@ -19,6 +19,7 @@ function readAliasPaths() {
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2025-09-10',
   devtools: { enabled: true },
 
   typescript: {
@@ -30,9 +31,9 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@pinia/nuxt'],
 
-  css: ['~/src/assets/style/index.scss'],
+  css: ['~/src/assets/style/index.scss', 'animate.css'],
 
   // Tailwind CSS configuration
   tailwindcss: {

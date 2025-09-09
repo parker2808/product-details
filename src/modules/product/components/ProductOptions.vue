@@ -9,12 +9,13 @@
       <div
         v-for="option in Object.keys(productOptions)"
         :class="[
-          'grid grid-cols-3 gap-2 px-4 py-2 border-border-gray',
+          'grid grid-cols-3 gap-2 px-4 py-2 border-border-gray cursor-pointer hover:bg-gray-50 transition-colors',
           {
             'border-b':
               option !== Object.keys(productOptions)[Object.keys(productOptions).length - 1]
           }
         ]"
+        @click="openOptionModal(option as PRODUCT_OPTION)"
       >
         <span class="text-text-dark text-base font-semibold col-span-1">{{ option }}</span>
         <span class="text-text-dark text-base font-normal col-span-2">{{
@@ -33,6 +34,8 @@ import { getOptionsByName } from '@/modules/product/utils/product-option.util'
 import type { Option } from '@/modules/product/types/entities/option.type'
 import type { ProductDetail } from '@/modules/product/types/entities/product-detail.type'
 import { productOptionKeyMapping } from '@/modules/product/constants/product-option-form.constant'
+import { useModal } from '@/modules/core/composables/use-modal'
+import ProductModal from '@/modules/product/components/ProductModal.vue'
 
 const props = defineProps<{
   productDetails: ProductDetail
@@ -53,6 +56,17 @@ const productOptions = computed<Record<PRODUCT_OPTION, Option[]>>(() => {
 
 const selectedProduct = defineModel<ProductDetailForm | undefined>({ required: true })
 
+const { openModal, closeModal } = useModal()
+
+// Track modal IDs for each option type
+const modalIds = ref<Record<PRODUCT_OPTION, string>>({
+  [PRODUCT_OPTION.SIZE]: '',
+  [PRODUCT_OPTION.COLOUR]: '',
+  [PRODUCT_OPTION.DRAWER_FRONT]: '',
+  [PRODUCT_OPTION.SLABTOP]: '',
+  [PRODUCT_OPTION.HANDLES]: ''
+})
+
 // Initialize the model with default values if not provided
 watchEffect(() => {
   if (!selectedProduct.value) {
@@ -67,6 +81,55 @@ watchEffect(() => {
     }
   }
 })
+
+/**
+ * Open modal for specific product option
+ */
+const openOptionModal = (optionType: PRODUCT_OPTION) => {
+  const modalId = openModal(ProductModal, {
+    title: `Select ${optionType}`,
+    position: 'right',
+    size: 'w-full md:w-[32rem] lg:w-[32rem]',
+    props: {
+      options: productOptions.value[optionType],
+      selectedOption: selectedProduct.value?.[productOptionKeyMapping[optionType]]
+    },
+    onAction: (action: string, payload: any) => {
+      if (action === 'select') {
+        onOptionSelect(optionType, payload)
+      }
+    },
+    onClose: () => {
+      // Clear the modal ID after closing
+      modalIds.value[optionType] = ''
+    }
+  })
+
+  // Store the modal ID for this option type
+  modalIds.value[optionType] = modalId
+}
+
+/**
+ * Handle option selection from modal
+ */
+const onOptionSelect = (optionType: PRODUCT_OPTION, selectedOption: Option) => {
+  if (!selectedProduct.value) return
+
+  // Update the selected product with the new option
+  const optionKey = productOptionKeyMapping[optionType]
+  selectedProduct.value = {
+    ...selectedProduct.value,
+    [optionKey]: selectedOption
+  }
+
+  // Close the modal using the stored UUID
+  const modalId = modalIds.value[optionType]
+  if (modalId) {
+    closeModal(modalId)
+    // Clear the modal ID after closing
+    modalIds.value[optionType] = ''
+  }
+}
 </script>
 
 <style scoped lang="scss"></style>

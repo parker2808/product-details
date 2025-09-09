@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useToast } from '@/modules/core/composables/use-toast'
-import ToastItem from './toast-item.vue'
+import ToastItem from './ToastItem.vue'
 
 const props = withDefaults(
   defineProps<{

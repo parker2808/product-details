@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import ToastContainer from '@/modules/core/components/toast/toast-container.vue'
+import ToastContainer from '~/src/modules/core/components/toast/ToastContainer.vue'
+import ModalManager from '@/modules/core/components/modal/ModalManager.vue'
 </script>
 
 <template>
   <div class="relative size-full">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <nuxt-layout>
+      <nuxt-page />
+    </nuxt-layout>
 
     <!-- Toast Container -->
     <toast-container />
+
+    <!-- Global Modal Manager -->
+    <modal-manager />
   </div>
 </template>
 
