@@ -2,5 +2,8 @@
   "extends": "./.nuxt/tsconfig.json",
   "paths": {
     "@/*": ["src/*"]
+  },
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   }
 }

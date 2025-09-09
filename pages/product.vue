@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PRODUCT_ROUTE } from '@/modules/product/enums/product-routes.enum'
+import ProductDetails from '@/modules/product/views/ProductDetails.vue'
 
 definePageMeta({
   name: PRODUCT_ROUTE.DETAIL,
@@ -8,5 +9,7 @@ definePageMeta({
 </script>
 
 <template>
-  <client-only>{{ 'Product' }}</client-only>
+  <client-only>
+    <product-details />
+  </client-only>
 </template>

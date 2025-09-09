@@ -6,6 +6,7 @@ export default {
     './layouts/**/*.vue',
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
+    './src/**/*.{js,vue,ts}',
     './app.vue',
     './error.vue'
   ],
@@ -24,14 +25,13 @@ export default {
           800: '#1e40af',
           900: '#1e3a8a',
           950: '#172554'
-        }
+        },
+        'primary-gray': '#f3f5f8',
+        'border-gray': '#e5e5e5',
+        'text-dark': '#231F20'
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif']
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem'
+        sans: ['Roboto', 'system-ui', 'sans-serif']
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

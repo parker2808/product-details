@@ -8,7 +8,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="home-page">
+  <div class="home-page w-full">
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

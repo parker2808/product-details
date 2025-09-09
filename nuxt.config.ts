@@ -25,11 +25,12 @@ export default defineNuxtConfig({
     tsConfig: {
       compilerOptions: {
         verbatimModuleSyntax: false
-      }
+      },
+      include: ['./types/**/*']
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
 
   css: ['~/src/assets/style/index.scss'],
 
@@ -40,6 +41,16 @@ export default defineNuxtConfig({
 
   alias: {
     ...readAliasPaths()
+  },
+
+  // Vite configuration for asset handling
+  vite: {
+    resolve: {
+      alias: {
+        ...readAliasPaths()
+      }
+    },
+    assetsInclude: ['**/*.svg']
   },
 
   // App configuration
