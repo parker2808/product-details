@@ -5,7 +5,9 @@ import type { ProductDetailForm } from '@/modules/product/types/forms/product-de
  * @param product - The product form data containing selected options and quantity
  * @returns The total price (base options total × quantity)
  */
-export const getProductPrice = (product: ProductDetailForm) => {
+export const getProductPrice = (product: ProductDetailForm): number => {
+  if (!product) return 0
+
   // Sum all option prices
   const optionsTotal =
     product.size.price +

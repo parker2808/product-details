@@ -30,6 +30,9 @@ export default {
         'border-gray': '#e5e5e5',
         'text-dark': '#231F20'
       },
+      boxShadow: {
+        'shadow-gray': '0px 0px 16px 0px #00000014'
+      },
       fontFamily: {
         sans: ['Roboto', 'system-ui', 'sans-serif']
       },

@@ -18,7 +18,7 @@
       >
         <span class="text-text-dark text-base font-semibold col-span-1">{{ option }}</span>
         <span class="text-text-dark text-base font-normal col-span-2">{{
-          (selectedProduct[productOptionKeyMapping[option as PRODUCT_OPTION]] as Option)
+          (selectedProduct?.[productOptionKeyMapping[option as PRODUCT_OPTION]] as Option)
             ?.displayName || 'N/A'
         }}</span>
       </div>
@@ -30,7 +30,6 @@
 import { PRODUCT_OPTION } from '@/modules/product/enums/product-option.enum'
 import type { ProductDetailForm } from '@/modules/product/types/forms/product-detail-form.type'
 import { getOptionsByName } from '@/modules/product/utils/product-option.util'
-import { getProductPrice } from '@/modules/product/utils/product-price.util'
 import type { Option } from '@/modules/product/types/entities/option.type'
 import type { ProductDetail } from '@/modules/product/types/entities/product-detail.type'
 import { productOptionKeyMapping } from '@/modules/product/constants/product-option-form.constant'
@@ -52,20 +51,21 @@ const productOptions = computed<Record<PRODUCT_OPTION, Option[]>>(() => {
   }
 })
 
-const selectedProduct = defineModel<ProductDetailForm>({
-  default: {
-    productId: props.productDetails.product.uid,
-    size: productOptions.value?.[PRODUCT_OPTION.SIZE]?.[0],
-    colour: productOptions.value?.[PRODUCT_OPTION.COLOUR]?.[0],
-    drawerFront: productOptions.value?.[PRODUCT_OPTION.DRAWER_FRONT]?.[0],
-    slabtop: productOptions.value?.[PRODUCT_OPTION.SLABTOP]?.[0],
-    handles: productOptions.value?.[PRODUCT_OPTION.HANDLES]?.[0],
-    quantity: 1
-  }
-})
+const selectedProduct = defineModel<ProductDetailForm | undefined>({ required: true })
 
-const totalPrice = computed(() => {
-  return getProductPrice(selectedProduct.value)
+// Initialize the model with default values if not provided
+watchEffect(() => {
+  if (!selectedProduct.value) {
+    selectedProduct.value = {
+      productId: props.productDetails.product.uid,
+      size: productOptions.value?.[PRODUCT_OPTION.SIZE]?.[0] || {},
+      colour: productOptions.value?.[PRODUCT_OPTION.COLOUR]?.[0] || {},
+      drawerFront: productOptions.value?.[PRODUCT_OPTION.DRAWER_FRONT]?.[0] || {},
+      slabtop: productOptions.value?.[PRODUCT_OPTION.SLABTOP]?.[0] || {},
+      handles: productOptions.value?.[PRODUCT_OPTION.HANDLES]?.[0] || {},
+      quantity: 1
+    }
+  }
 })
 </script>
 

@@ -32,10 +32,9 @@
 </template>
 
 <script setup lang="ts">
-import arrowLeft from '~/src/assets/icons/arrow-left.svg'
-import arrowRight from '~/src/assets/icons/arrow-right.svg'
-import { isIPXPath } from '@/modules/core/utils/image.utils'
-import CommonImage from '@/modules/core/components/image/CommonImage.vue'
+import CommonImage from '@/modules/core/components/image/CommonImage.vue';
+import arrowLeft from '~/src/assets/icons/arrow-left.svg';
+import arrowRight from '~/src/assets/icons/arrow-right.svg';
 
 const props = defineProps<{
   images: string[]
