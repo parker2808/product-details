@@ -25,6 +25,7 @@
 
         <div
           class="flex items-center gap-1 w-full bg-text-dark hover:cursor-pointer px-1 py-2 justify-center hover:bg-primary-500 transition-colors duration-200"
+          @click="addToCart"
         >
           <inline-svg :src="BasketAdd" class="size-4" />
           <span class="text-white text-sm font-semibold capitalize">Add to Cart</span>
@@ -38,11 +39,14 @@
 import type { ProductDetailForm } from '@/modules/product/types/forms/product-detail-form.type'
 import { getProductPrice } from '@/modules/product/utils/product-price.util'
 import { formatCurrency } from '@/modules/core/utils/currency-format.util'
+import { useToast } from '@/modules/core/composables/use-toast'
 import minus from '~/src/assets/icons/minus.svg'
 import plus from '~/src/assets/icons/plus.svg'
 import BasketAdd from '~/src/assets/icons/basket-add.svg'
 
 const selectedProduct = defineModel<ProductDetailForm | undefined>({ required: true })
+const { success } = useToast()
+
 const totalPrice = computed(() => {
   return getProductPrice(selectedProduct.value as ProductDetailForm)
 })
@@ -52,6 +56,18 @@ const calculateQuantity = (type: 'minus' | 'plus') => {
 
   const increment = type === 'minus' ? -1 : 1
   selectedProduct.value.quantity += increment
+}
+
+/**
+ * Handle add to cart action
+ */
+const addToCart = () => {
+  if (!selectedProduct.value) return
+
+  success('The product has been added to your cart', {
+    title: 'Added to Cart',
+    icon: BasketAdd
+  })
 }
 </script>
 

@@ -1,10 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ToastContainer from '@/modules/core/components/toast/toast-container.vue'
+</script>
 
 <template>
   <div class="relative size-full">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+
+    <!-- Toast Container -->
+    <toast-container />
   </div>
 </template>
 

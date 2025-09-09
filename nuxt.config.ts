@@ -88,5 +88,5 @@ export default defineNuxtConfig({
   },
 
   // Plugins configuration
-  plugins: ['~/plugins/vue-inline-svg.client.ts']
+  plugins: ['~/plugins/vue-inline-svg.client.ts', '~/plugins/toast.client.ts']
 })
