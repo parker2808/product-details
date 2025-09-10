@@ -9,7 +9,5 @@ definePageMeta({
 </script>
 
 <template>
-  <client-only>
-    <product-details />
-  </client-only>
+  <product-details />
 </template>

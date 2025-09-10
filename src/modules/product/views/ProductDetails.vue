@@ -31,6 +31,65 @@ import ProductQuantity from '@/modules/product/components/ProductQuantity.vue'
 const images = [Image1, Image2, Image3, Image4]
 
 const selectedProduct = ref<ProductDetailForm>()
+
+// SEO and Meta Management
+useHead({
+  title: () => `${productDetails.product.name} - Product Details`,
+  meta: [
+    {
+      name: 'description',
+      content: () => productDetails.product.description
+    },
+    {
+      property: 'og:title',
+      content: () => `${productDetails.product.name} - Product Details`
+    },
+    {
+      property: 'og:description',
+      content: () => productDetails.product.description
+    },
+    {
+      property: 'og:image',
+      content: () => Image1
+    },
+    {
+      property: 'og:type',
+      content: 'product'
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image'
+    },
+    {
+      name: 'twitter:title',
+      content: () => `${productDetails.product.name} - Product Details`
+    },
+    {
+      name: 'twitter:description',
+      content: () => productDetails.product.description
+    },
+    {
+      name: 'twitter:image',
+      content: () => Image1
+    }
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: () => `${useRequestURL().origin}/product`
+    }
+  ]
+})
+
+// Alternative using useSeoMeta for better DX
+useSeoMeta({
+  title: () => `${productDetails.product.name} - Product Details`,
+  ogTitle: () => `${productDetails.product.name} - Product Details`,
+  description: () => productDetails.product.description,
+  ogDescription: () => productDetails.product.description,
+  ogImage: () => Image1,
+  twitterCard: 'summary_large_image'
+})
 </script>
 
 <style scoped lang="scss"></style>

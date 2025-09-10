@@ -70,6 +70,8 @@ export default defineNuxtConfig({
   ssr: false,
 
   routeRules: {
+    // Enable SSR for product route for better SEO
+    '/product': { ssr: true },
     '/**': { ssr: false }
   },
 
