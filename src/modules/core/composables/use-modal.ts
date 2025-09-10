@@ -1,8 +1,8 @@
-import { h, type Component, type VNode } from 'vue'
+import { type Component, type VNode, h } from 'vue'
 import { useModalStore } from '@/modules/core/stores/modal.store'
 import type { ModalPosition } from '@/modules/core/types/entities/modal.type'
 
-interface OpenModalOptions {
+type OpenModalOptions = {
   title: string
   position?: ModalPosition
   size?: string

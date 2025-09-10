@@ -29,7 +29,7 @@
 import AppDrawer from '@/modules/core/components/drawer/AppDrawer.vue'
 import { useModalStore } from '@/modules/core/stores/modal.store'
 
-interface Props {
+type Props = {
   /** Modal identifier */
   modalId: string
 }

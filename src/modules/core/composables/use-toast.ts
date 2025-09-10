@@ -1,8 +1,8 @@
-import { ref, computed, nextTick } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import type {
   Toast,
-  ToastOptions,
   ToastConfig,
+  ToastOptions,
   ToastType
 } from '@/modules/core/types/entities/toast.type'
 

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/74</span>
+                <span class='fraction'>0/76</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/74</span>
+                <span class='fraction'>0/76</span>
             </div>
         
             
@@ -137,7 +137,11 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -212,36 +216,38 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >&lt;template&gt;</span></span></span>
-<span class="cstat-no" title="statement not covered" >  &lt;div v-if="selectedProduct" class="flex flex-col gap-4"&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;span class="text-text-dark text-3xl font-semibold"&gt;{{ formatCurrency(totalPrice) }}&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >  &lt;div v-if="selectedProduct" class="flex flex-col gap-3 md:gap-4"&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;span class="text-text-dark text-2xl md:text-3xl font-semibold"&gt;{{</span>
+<span class="cstat-no" title="statement not covered" >      formatCurrency(totalPrice)</span>
+<span class="cstat-no" title="statement not covered" >    }}&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    &lt;div class="flex flex-col gap-2"&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;span class="text-text-dark text-sm font-normal"&gt;{{ 'Quantity' }}&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;div class="flex flex-col gap-2 md:gap-3"&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;span class="text-text-dark text-sm md:text-base font-normal"&gt;{{ 'Quantity' }}&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      &lt;div class="flex w-full gap-4 items-center"&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;div class="flex flex-col sm:flex-row w-full gap-3 md:gap-4 items-stretch sm:items-center"&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >          class="flex items-center gap-1 border border-border-gray px-1 py-1.5 justify-center hover:cursor-pointer"</span>
+<span class="cstat-no" title="statement not covered" >          class="flex items-center gap-1 border border-border-gray px-1 py-1.5 justify-center hover:cursor-pointer w-full sm:w-auto"</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;div</span>
 <span class="cstat-no" title="statement not covered" >            :class="selectedProduct?.quantity === 1 ? 'opacity-50 cursor-not-allowed' : 'p-1'"</span>
 <span class="cstat-no" title="statement not covered" >            @click="calculateQuantity('minus')"</span>
 <span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;inline-svg :src="minus" class="size-4" /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;inline-svg :src="minus" class="size-4 md:size-5" /&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;span class="text-text-dark text-sm font-normal w-6 text-center"&gt;{{</span>
+<span class="cstat-no" title="statement not covered" >          &lt;span class="text-text-dark text-sm md:text-base font-normal w-8 md:w-10 text-center"&gt;{{</span>
 <span class="cstat-no" title="statement not covered" >            selectedProduct?.quantity</span>
 <span class="cstat-no" title="statement not covered" >          }}&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;div class="p-1" @click="calculateQuantity('plus')"&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;inline-svg :src="plus" class="size-4" /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;inline-svg :src="plus" class="size-4 md:size-5" /&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >          class="flex items-center gap-1 w-full bg-text-dark hover:cursor-pointer px-1 py-2 justify-center hover:bg-primary-500 transition-colors duration-200"</span>
+<span class="cstat-no" title="statement not covered" >          class="flex items-center gap-1 md:gap-2 w-full bg-text-dark hover:cursor-pointer px-1 py-2 md:py-3 justify-center hover:bg-primary-500 transition-colors duration-200"</span>
 <span class="cstat-no" title="statement not covered" >          @click="addToCart"</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;inline-svg :src="BasketAdd" class="size-4" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;span class="text-white text-sm font-semibold capitalize"&gt;Add to Cart&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;inline-svg :src="BasketAdd" class="size-4 md:size-5" /&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;span class="text-white text-sm md:text-base font-semibold capitalize"&gt;Add to Cart&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
@@ -292,7 +298,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-09T19:43:30.486Z
+                at 2025-09-10T03:49:26.496Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

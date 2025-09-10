@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import { PUBLIC_ROUTE } from '@/modules/core/enums/public-routes.enum'
-
-definePageMeta({
-  name: PUBLIC_ROUTE.TEST,
-  layout: 'public'
-})
-</script>
-
 <template>
   <div class="home-page w-full">
     <!-- Hero Section -->
@@ -18,12 +9,12 @@ definePageMeta({
           options
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <NuxtLink
+          <nuxt-link
             to="/product"
             class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-700 bg-white hover:bg-gray-50 transition-colors duration-200"
           >
             Browse Products
-          </NuxtLink>
+          </nuxt-link>
           <button
             class="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-primary-700 transition-colors duration-200"
           >
@@ -64,7 +55,7 @@ definePageMeta({
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
+                />
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Quality Assured</h3>
@@ -89,7 +80,7 @@ definePageMeta({
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"
-                ></path>
+                />
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Customizable</h3>
@@ -114,7 +105,7 @@ definePageMeta({
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M13 10V3L4 14h7v7l9-11h-7z"
-                ></path>
+                />
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Fast Delivery</h3>
@@ -131,13 +122,22 @@ definePageMeta({
         <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
           Explore our full product range and find the perfect solution for your needs
         </p>
-        <NuxtLink
+        <nuxt-link
           to="/product"
           class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-200"
         >
           View All Products
-        </NuxtLink>
+        </nuxt-link>
       </div>
     </section>
   </div>
 </template>
+
+<script setup lang="ts">
+import { PUBLIC_ROUTE } from '@/modules/core/enums/public-routes.enum'
+
+definePageMeta({
+  name: PUBLIC_ROUTE.TEST,
+  layout: 'public'
+})
+</script>

@@ -1,3 +1,7 @@
+<template>
+  <product-details />
+</template>
+
 <script setup lang="ts">
 import { PRODUCT_ROUTE } from '@/modules/product/enums/product-routes.enum'
 import ProductDetails from '@/modules/product/views/ProductDetails.vue'
@@ -7,7 +11,3 @@ definePageMeta({
   layout: 'public'
 })
 </script>
-
-<template>
-  <product-details />
-</template>

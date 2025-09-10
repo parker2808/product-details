@@ -17,7 +17,7 @@
       :enter-active-class="`animate__animated ${enterAnimationClass}`"
       :leave-active-class="`animate__animated ${leaveAnimationClass}`"
     >
-      <div v-if="visible" :class="['fixed bg-white shadow-lg z-50', positionClasses, sizeClasses]">
+      <div v-if="visible" class="fixed bg-white shadow-lg z-50" :class="[positionClasses, sizeClasses]">
         <!-- Header -->
         <div
           v-if="!hideHeader"
@@ -32,8 +32,8 @@
           </div>
           <button
             v-if="!hideCloseButton"
-            @click="onClose"
             class="p-1 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            @click="onClose"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -63,7 +63,7 @@
 <script setup lang="ts">
 import type { ModalPosition } from '@/modules/core/types/entities/modal.type'
 
-interface Props {
+type Props = {
   /** Whether the drawer is visible */
   visible: boolean
   /** Drawer title */

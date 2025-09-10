@@ -10,8 +10,7 @@
     <div class="grid grid-cols-1 border border-border-gray">
       <div
         v-for="option in Object.keys(productOptions)"
-        :class="[
-          'grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-2 px-3 md:px-4 py-2 md:py-3 border-border-gray cursor-pointer hover:bg-gray-50 transition-colors',
+        class="grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-2 px-3 md:px-4 py-2 md:py-3 border-border-gray cursor-pointer hover:bg-gray-50 transition-colors" :class="[
           {
             'border-b':
               option !== Object.keys(productOptions)[Object.keys(productOptions).length - 1]

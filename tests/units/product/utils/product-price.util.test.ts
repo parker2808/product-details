@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { getProductPrice } from '@/modules/product/utils/product-price.util'
 import type { ProductDetailForm } from '@/modules/product/types/forms/product-detail-form.type'
 

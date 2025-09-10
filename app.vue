@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import ToastContainer from '~/src/modules/core/components/toast/ToastContainer.vue'
-import ModalManager from '@/modules/core/components/modal/ModalManager.vue'
-</script>
-
 <template>
   <div class="relative size-full">
     <nuxt-layout>
@@ -16,6 +11,11 @@ import ModalManager from '@/modules/core/components/modal/ModalManager.vue'
     <modal-manager />
   </div>
 </template>
+
+<script setup lang="ts">
+import ToastContainer from '~/src/modules/core/components/toast/ToastContainer.vue'
+import ModalManager from '@/modules/core/components/modal/ModalManager.vue'
+</script>
 
 <style scoped lang="scss">
 .app-theme {

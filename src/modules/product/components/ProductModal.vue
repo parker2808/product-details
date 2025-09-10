@@ -30,8 +30,7 @@
         <!-- Checkbox -->
         <div class="flex-shrink-0 ml-3">
           <div
-            :class="[
-              'w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors',
+            class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors" :class="[
               selectedOption?.uid === option.uid
                 ? 'bg-text-dark border-text-dark'
                 : 'border-gray-300 hover:border-gray-400'
@@ -67,7 +66,7 @@ import type { Option } from '@/modules/product/types/entities/option.type'
 import type { ModalItem } from '@/modules/core/types/entities/modal.type'
 import { formatCurrency } from '@/modules/core/utils/currency-format.util'
 
-interface Props {
+type Props = {
   /** Modal identifier */
   modalId: string
   /** Modal title */

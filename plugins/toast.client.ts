@@ -4,20 +4,20 @@ export default defineNuxtPlugin(() => {
   // Make toast globally available
   return {
     provide: {
-      toast: toast
+      toast
     }
   }
 })
 
 // Type declaration for global $toast
 declare module '#app' {
-  interface NuxtApp {
+  type NuxtApp = {
     $toast: typeof toast
   }
 }
 
 declare module 'vue' {
-  interface ComponentCustomProperties {
+  type ComponentCustomProperties = {
     $toast: typeof toast
   }
 }

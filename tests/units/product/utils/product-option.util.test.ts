@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { getOptionsByName } from '@/modules/product/utils/product-option.util'
 import { PRODUCT_OPTION } from '@/modules/product/enums/product-option.enum'
 import type { ProductDetail } from '@/modules/product/types/entities/product-detail.type'

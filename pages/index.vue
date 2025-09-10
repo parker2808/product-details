@@ -1,3 +1,7 @@
+<template>
+  <client-only>{{ 'Home' }}</client-only>
+</template>
+
 <script setup lang="ts">
 import { PUBLIC_ROUTE } from '@/modules/core/enums/public-routes.enum'
 import { PRODUCT_ROUTE } from '@/modules/product/enums/product-routes.enum'
@@ -11,7 +15,3 @@ await navigateTo({
   name: PRODUCT_ROUTE.DETAIL
 })
 </script>
-
-<template>
-  <client-only>{{ 'Home' }}</client-only>
-</template>

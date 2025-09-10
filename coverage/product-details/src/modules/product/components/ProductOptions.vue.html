@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/135</span>
+                <span class='fraction'>0/142</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/135</span>
+                <span class='fraction'>0/142</span>
             </div>
         
             
@@ -198,7 +198,21 @@
 <a name='L133'></a><a href='#L133'>133</a>
 <a name='L134'></a><a href='#L134'>134</a>
 <a name='L135'></a><a href='#L135'>135</a>
-<a name='L136'></a><a href='#L136'>136</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -334,9 +348,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >&lt;template&gt;</span></span></span>
-<span class="cstat-no" title="statement not covered" >  &lt;div class="flex flex-col gap-4"&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div class="flex gap-4 text-text-dark items-center"&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;span class="text-xl font-normal capitalize whitespace-nowrap"&gt;{{ 'Choose Options' }}&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >  &lt;div class="flex flex-col gap-3 md:gap-4"&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;div class="flex gap-2 md:gap-4 text-text-dark items-center"&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;span class="text-lg md:text-xl font-normal capitalize whitespace-nowrap"&gt;{{</span>
+<span class="cstat-no" title="statement not covered" >        'Choose Options'</span>
+<span class="cstat-no" title="statement not covered" >      }}&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;div class="border-b border-text-dark w-full" /&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -344,7 +360,7 @@
 <span class="cstat-no" title="statement not covered" >      &lt;div</span>
 <span class="cstat-no" title="statement not covered" >        v-for="option in Object.keys(productOptions)"</span>
 <span class="cstat-no" title="statement not covered" >        :class="[</span>
-<span class="cstat-no" title="statement not covered" >          'grid grid-cols-3 gap-2 px-4 py-2 border-border-gray cursor-pointer hover:bg-gray-50 transition-colors',</span>
+<span class="cstat-no" title="statement not covered" >          'grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-2 px-3 md:px-4 py-2 md:py-3 border-border-gray cursor-pointer hover:bg-gray-50 transition-colors',</span>
 <span class="cstat-no" title="statement not covered" >          {</span>
 <span class="cstat-no" title="statement not covered" >            'border-b':</span>
 <span class="cstat-no" title="statement not covered" >              option !== Object.keys(productOptions)[Object.keys(productOptions).length - 1]</span>
@@ -352,11 +368,16 @@
 <span class="cstat-no" title="statement not covered" >        ]"</span>
 <span class="cstat-no" title="statement not covered" >        @click="openOptionModal(option as PRODUCT_OPTION)"</span>
 <span class="cstat-no" title="statement not covered" >      &gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;span class="text-text-dark text-base font-semibold col-span-1"&gt;{{ option }}&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;span class="text-text-dark text-base font-normal col-span-2"&gt;{{</span>
-<span class="cstat-no" title="statement not covered" >          (selectedProduct?.[productOptionKeyMapping[option as PRODUCT_OPTION]] as Option)</span>
-<span class="cstat-no" title="statement not covered" >            ?.displayName || 'N/A'</span>
+<span class="cstat-no" title="statement not covered" >        &lt;span class="text-text-dark text-sm md:text-base font-semibold col-span-1 mb-1 sm:mb-0"&gt;{{</span>
+<span class="cstat-no" title="statement not covered" >          option</span>
 <span class="cstat-no" title="statement not covered" >        }}&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;span</span>
+<span class="cstat-no" title="statement not covered" >          class="text-gray-600 sm:text-text-dark text-sm md:text-base font-normal sm:col-span-2"</span>
+<span class="cstat-no" title="statement not covered" >          &gt;{{</span>
+<span class="cstat-no" title="statement not covered" >            (selectedProduct?.[productOptionKeyMapping[option as PRODUCT_OPTION]] as Option)</span>
+<span class="cstat-no" title="statement not covered" >              ?.displayName || 'N/A'</span>
+<span class="cstat-no" title="statement not covered" >          }}&lt;/span</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >  &lt;/div&gt;</span>
@@ -475,7 +496,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-09T19:43:30.486Z
+                at 2025-09-10T03:49:26.496Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
 import type { ModalConfig, ModalPosition } from '@/modules/core/types/entities/modal.type'
 
-interface ModalData {
+type ModalData = {
   title?: string
   options?: any[]
   selectedOption?: any
@@ -12,7 +12,7 @@ interface ModalData {
   [key: string]: any
 }
 
-interface ModalState {
+type ModalState = {
   modals: Record<string, ModalConfig>
   modalData: Record<string, ModalData>
 }

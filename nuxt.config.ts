@@ -3,7 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 import path from 'path'
 
 function readAliasPaths() {
-  const paths = tsconfig.paths
+  const { paths } = tsconfig
 
   return Object.entries(paths).reduce(
     (alias: Record<string, string>, [key, value]) => {
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@pinia/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@pinia/nuxt', '@nuxt/eslint'],
 
   css: ['~/src/assets/style/index.scss', 'animate.css'],
 

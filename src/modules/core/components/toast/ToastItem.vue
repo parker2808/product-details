@@ -41,9 +41,9 @@
         <!-- Close Button -->
         <button
           v-if="!toast.persistent"
-          @click="$emit('remove')"
           class="ml-4 flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors duration-200"
           aria-label="Close notification"
+          @click="$emit('remove')"
         >
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path
@@ -72,7 +72,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount, h } from 'vue'
+import { computed, h, onBeforeUnmount, onMounted, ref } from 'vue'
 import type { Toast } from '@/modules/core/types/entities/toast.type'
 
 const props = withDefaults(
@@ -94,8 +94,8 @@ const progressWidth = ref(100)
 const startTime = ref(0)
 let progressInterval: NodeJS.Timeout | null = null
 let autoRemoveTimeout: NodeJS.Timeout | null = null
-let isPaused = ref(false)
-let remainingTime = ref(0)
+const isPaused = ref(false)
+const remainingTime = ref(0)
 
 /**
  * Toast styling classes based on type

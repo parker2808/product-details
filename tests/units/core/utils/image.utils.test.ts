@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest'
-import { isIPXPath, getImageComponentType } from '@/modules/core/utils/image.utils'
+import { describe, expect, it } from 'vitest'
+import { getImageComponentType, isIPXPath } from '@/modules/core/utils/image.utils'
 
 describe('Image Utilities', () => {
   describe('isIPXPath', () => {
