@@ -1,34 +1,36 @@
 <template>
-  <div v-if="selectedProduct" class="flex flex-col gap-4">
-    <span class="text-text-dark text-3xl font-semibold">{{ formatCurrency(totalPrice) }}</span>
+  <div v-if="selectedProduct" class="flex flex-col gap-3 md:gap-4">
+    <span class="text-text-dark text-2xl md:text-3xl font-semibold">{{
+      formatCurrency(totalPrice)
+    }}</span>
 
-    <div class="flex flex-col gap-2">
-      <span class="text-text-dark text-sm font-normal">{{ 'Quantity' }}</span>
+    <div class="flex flex-col gap-2 md:gap-3">
+      <span class="text-text-dark text-sm md:text-base font-normal">{{ 'Quantity' }}</span>
 
-      <div class="flex w-full gap-4 items-center">
+      <div class="flex flex-col sm:flex-row w-full gap-3 md:gap-4 items-stretch sm:items-center">
         <div
-          class="flex items-center gap-1 border border-border-gray px-1 py-1.5 justify-center hover:cursor-pointer"
+          class="flex items-center gap-1 border border-border-gray px-1 py-1.5 justify-center hover:cursor-pointer w-full sm:w-auto"
         >
           <div
             :class="selectedProduct?.quantity === 1 ? 'opacity-50 cursor-not-allowed' : 'p-1'"
             @click="calculateQuantity('minus')"
           >
-            <inline-svg :src="minus" class="size-4" />
+            <inline-svg :src="minus" class="size-4 md:size-5" />
           </div>
-          <span class="text-text-dark text-sm font-normal w-6 text-center">{{
+          <span class="text-text-dark text-sm md:text-base font-normal w-8 md:w-10 text-center">{{
             selectedProduct?.quantity
           }}</span>
           <div class="p-1" @click="calculateQuantity('plus')">
-            <inline-svg :src="plus" class="size-4" />
+            <inline-svg :src="plus" class="size-4 md:size-5" />
           </div>
         </div>
 
         <div
-          class="flex items-center gap-1 w-full bg-text-dark hover:cursor-pointer px-1 py-2 justify-center hover:bg-primary-500 transition-colors duration-200"
+          class="flex items-center gap-1 md:gap-2 w-full bg-text-dark hover:cursor-pointer px-1 py-2 md:py-3 justify-center hover:bg-primary-500 transition-colors duration-200"
           @click="addToCart"
         >
-          <inline-svg :src="BasketAdd" class="size-4" />
-          <span class="text-white text-sm font-semibold capitalize">Add to Cart</span>
+          <inline-svg :src="BasketAdd" class="size-4 md:size-5" />
+          <span class="text-white text-sm md:text-base font-semibold capitalize">Add to Cart</span>
         </div>
       </div>
     </div>

@@ -1,7 +1,11 @@
 <template>
-  <div class="flex size-full gap-20 p-[7.5rem] items-start justify-center">
+  <div
+    class="flex flex-col lg:flex-row size-full gap-6 md:gap-12 lg:gap-20 py-4 md:py-8 lg:py-16 px-4 md:px-8 lg:px-[7.5rem] items-start justify-center"
+  >
     <image-sliders :images="images" />
-    <div class="flex flex-col gap-10 max-w-[31.875rem] break-words whitespace-break-spaces">
+    <div
+      class="flex flex-col gap-6 md:gap-8 lg:gap-10 w-full lg:max-w-[31.875rem] break-words whitespace-break-spaces"
+    >
       <product-header
         :title="productDetails.product.name"
         :description="productDetails.product.description"
