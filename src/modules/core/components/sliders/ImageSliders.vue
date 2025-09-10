@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col gap-2 items-center w-full">
+  <div class="flex flex-col gap-2 items-center w-fit">
     <div
-      class="flex relative items-center justify-center border w-full h-64 sm:h-80 md:h-96 lg:min-h-[36.75rem] lg:min-w-[36.75rem] border-border-gray overflow-hidden"
+      class="flex relative items-center justify-center border w-80 sm:w-96 md:w-96 lg:w-[36.75rem] h-64 sm:h-80 md:h-96 lg:min-h-[36.75rem] border-border-gray overflow-hidden"
     >
       <transition name="image-fade" mode="out-in">
         <common-image
@@ -12,23 +12,25 @@
         />
       </transition>
 
-      <div class="flex absolute right-1 md:right-2 bottom-1 md:bottom-2 gap-1 md:gap-2">
+      <div class="flex absolute right-2 md:right-3 bottom-2 md:bottom-3 gap-2 md:gap-3">
         <button
-          class="p-1 md:p-1.5 rounded-full bg-primary-gray transition-all duration-200 hover:bg-gray-300 hover:scale-110 active:scale-95"
+          class="p-2 md:p-1.5 rounded-full bg-primary-gray bg-opacity-80 md:bg-opacity-100 transition-all duration-200 hover:bg-gray-300 hover:scale-110 active:scale-95"
           @click="selectPreviousImage"
         >
-          <inline-svg :src="arrowLeft" class="size-4 md:size-5 lg:size-6" />
+          <inline-svg :src="arrowLeft" class="size-6 md:size-5 lg:size-6" />
         </button>
         <button
-          class="p-1 md:p-1.5 rounded-full bg-primary-gray transition-all duration-200 hover:bg-gray-300 hover:scale-110 active:scale-95"
+          class="p-2 md:p-1.5 rounded-full bg-primary-gray bg-opacity-80 md:bg-opacity-100 transition-all duration-200 hover:bg-gray-300 hover:scale-110 active:scale-95"
           @click="selectNextImage"
         >
-          <inline-svg :src="arrowRight" class="size-4 md:size-5 lg:size-6" />
+          <inline-svg :src="arrowRight" class="size-6 md:size-5 lg:size-6" />
         </button>
       </div>
     </div>
 
-    <div class="flex gap-1 w-full overflow-x-auto py-1 scrollbar-hide">
+    <div
+      class="flex gap-1 w-80 sm:w-96 md:w-96 lg:w-[36.75rem] overflow-x-auto py-1 scrollbar-hide"
+    >
       <div
         v-for="image in images"
         :key="image"

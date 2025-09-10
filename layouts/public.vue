@@ -33,7 +33,7 @@
       @apply fixed left-0 right-0 top-0 z-50;
     }
     .layout_body {
-      @apply mt-[5rem];
+      @apply mt-5;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col lg:flex-row size-full gap-6 md:gap-12 lg:gap-20 py-4 md:py-8 lg:py-16 px-4 md:px-8 lg:px-[7.5rem] items-start justify-center"
+    class="flex flex-col lg:flex-row size-full gap-6 md:gap-12 lg:gap-20 md:py-8 lg:py-16 px-4 md:px-8 lg:px-[7.5rem] items-center justify-center"
   >
     <image-sliders :images="images" />
     <div
